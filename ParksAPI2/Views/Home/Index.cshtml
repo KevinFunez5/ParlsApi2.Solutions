@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using ParksAPI2.Models;
+
+<h1>All Parks</h1>
+<hr>
+
+<ul>
+  @foreach(Park park in Model)
+{
+    <p><strong>@park.ParkName</strong></p>
+    <ul>
+        <li>Rating: @park.Rating/10</li>
+        @if(park.Visited == true)
+        {
+            <li>Visited!</li>
+        }
+        else 
+        {
+            <li>Not Visited Yet!</li>
+        }
+</ul>
+}
